@@ -8,6 +8,9 @@ class Nav extends React.Component {
         this.state = {
             isOpen: false
         };
+
+        // Manually binding as an alternative to using arrow function variable
+        // this._toggleMenu = this._toggleMenu.bind(this);
     }
     render() {
         return (
@@ -27,6 +30,7 @@ class Nav extends React.Component {
         );
     }
 
+    // Arrow function variable never ever loses the value of `this` keyword
     _toggleMenu = () => {
         this.setState({
             isOpen: !this.state.isOpen
