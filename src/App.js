@@ -42,6 +42,9 @@ function App() {
         <Route path="/blog/:blogId">
           <Blog />
         </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
