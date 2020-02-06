@@ -1,18 +1,33 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { 
+    Link,
+    useParams,
+    useRouteMatch
+} from 'react-router-dom';
 const blogPosts = [
+    'zero post',
     'first post',
     'second post',
     'third post'
 ];
 
 function Blog() {
-
     const params = useParams();
     console.log(params.blogId);
+    const match = useRouteMatch();
+    console.table(match);
 
     return (
-    <div>{blogPosts[params.blogId]}</div>
+        <div>
+            <ul>
+                {blogPosts.map((b, i) => (
+                    <li><Link to={i}>{b}</Link></li>
+                ))}
+            </ul>
+            <p>
+                {blogPosts[params.blogId]}
+            </p>
+        </div>
     );
 }
 

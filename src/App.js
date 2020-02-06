@@ -38,7 +38,7 @@ function App() {
         links={linkNames}
       />
 
-      <Switch>    
+      <Switch>
         <Route path="/blog/:blogId">
           <Blog />
         </Route>
