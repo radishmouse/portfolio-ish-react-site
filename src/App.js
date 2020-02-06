@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import MainContent from './MainContent';
+import Blog from './Blog';
 import Footer from './Footer';
 import Nav from './Nav';
 
@@ -32,31 +33,27 @@ const linkNames = [
 function App() {
   return (
     <Router>
+      <Header title={websiteTitle} />
       <Nav 
         links={linkNames}
       />
 
-      <Switch>
-        <Route path="/blog/list">
-          <BlogList />
-        </Route>        
-        <Route path="/blog">
+      <Switch>    
+        <Route path="/blog/:blogId">
           <Blog />
         </Route>
         <Route path="/">
           <Home />
         </Route>
       </Switch>
+
+      <Footer />
     </Router>
   );
 }
 
 function Home() {
   return <h1>You are Home</h1>;
-}
-
-function Blog() {
-  return <h1>You are on the blog!</h1>
 }
 
 function BlogList() {
